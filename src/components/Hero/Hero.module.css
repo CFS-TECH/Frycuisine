@@ -8,7 +8,7 @@
   background-position: center;
   background-attachment: fixed;
   color: var(--color-white);
-  padding-top: 150px; /* Space for absolute header */
+  padding-top: 250px; /* Space for absolute header */
 }
 
 .overlay {
