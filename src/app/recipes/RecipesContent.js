@@ -32,7 +32,7 @@ const RECIPES_DATA = [
     serves: "1",
     calories: "320 kcal",
     difficulty: "Easy",
-    image: "/images/media__1778272334260.jpg",
+    image: "/images/trending_2_1778272749318.png",
   },
   {
     id: 4,
@@ -52,7 +52,7 @@ const RECIPES_DATA = [
     serves: "1",
     calories: "210 kcal",
     difficulty: "Easy",
-    image: "/images/media__1778272347757.jpg",
+    image: "/images/smoothie_bowl.png",
   },
   {
     id: 6,
@@ -72,7 +72,7 @@ const RECIPES_DATA = [
     serves: "2",
     calories: "290 kcal",
     difficulty: "Easy",
-    image: "/images/media__1778272358827.jpg",
+    image: "/images/grilled_salmon.png",
   },
   {
     id: 8,
