@@ -20,16 +20,10 @@
   margin: 0;
 }
 
-html {
-  height: 100%;
-  overflow: hidden;
-}
-
+html,
 body {
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
   max-width: 100vw;
+  overflow-x: hidden;
   background-color: var(--color-beige);
   color: var(--color-slate);
   font-family: var(--font-sans);
