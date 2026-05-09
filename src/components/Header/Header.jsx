@@ -1,27 +1,10 @@
-"use client";
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css';
 import { Search } from 'lucide-react';
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+    <header className={styles.header}>
       <div className={`container ${styles.headerContainer}`}>
         <div className={styles.logo}>
           <Link href="/">
