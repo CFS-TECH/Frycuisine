@@ -1,0 +1,150 @@
+.section {
+  padding: 100px 0;
+  background-color: var(--color-beige);
+  position: relative;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: var(--font-serif);
+  color: var(--color-slate);
+  margin-bottom: 80px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.itemReverse {
+  flex-direction: row-reverse;
+}
+
+.content {
+  flex: 1;
+  text-align: right;
+  padding-right: 60px;
+}
+
+.itemReverse .content {
+  text-align: left;
+  padding-right: 0;
+  padding-left: 60px;
+}
+
+.date {
+  font-size: 0.85rem;
+  color: var(--color-sage);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-dark);
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--color-slate);
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.readMore {
+  font-family: var(--font-serif);
+  color: var(--color-gold);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  text-transform: uppercase;
+}
+
+.readMore:hover {
+  color: var(--color-red);
+}
+
+.imageWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 60px;
+}
+
+.itemReverse .imageWrapper {
+  justify-content: flex-end;
+  padding-left: 0;
+  padding-right: 60px;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 280px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.image {
+  transition: transform 0.6s ease;
+}
+
+.item:hover .image {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .list::before {
+    display: none;
+  }
+  .item, .itemReverse {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .content, .itemReverse .content {
+    text-align: center;
+    padding: 0;
+  }
+  .imageWrapper, .itemReverse .imageWrapper {
+    padding: 0;
+    justify-content: center;
+    width: 100%;
+  }
+  .imageContainer {
+    height: 250px;
+  }
+}
+

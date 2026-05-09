@@ -1,0 +1,90 @@
+.section {
+  padding: 80px 0;
+  background-color: var(--color-beige);
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: var(--font-serif);
+  color: var(--color-slate);
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background-color: var(--color-cream);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.image {
+  transition: transform 0.5s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.content {
+  padding: 25px;
+  text-align: center;
+}
+
+.title {
+  color: var(--color-red);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.meta {
+  font-size: 0.8rem;
+  color: var(--color-sage);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.meta span {
+  font-weight: 600;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: var(--color-slate);
+  margin-bottom: 20px;
+}
+
+.readMore {
+  font-family: var(--font-serif);
+  color: var(--color-gold);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.readMore:hover {
+  color: var(--color-red);
+}
