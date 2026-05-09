@@ -10,6 +10,7 @@
   color: var(--color-white);
   padding-top: 250px; /* Space for absolute header */
   padding-bottom: 100px;
+  overflow: hidden;
 }
 
 .overlay {
