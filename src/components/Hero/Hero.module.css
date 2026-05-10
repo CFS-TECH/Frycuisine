@@ -96,11 +96,35 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .hero {
+    padding-top: 200px;
+  }
   .title {
-    font-size: 2.5rem;
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 150px;
+    min-height: 60vh;
+    text-align: center;
+  }
+  .content {
+    margin: 0 auto;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
   }
   .buttons {
     flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
   }
 }

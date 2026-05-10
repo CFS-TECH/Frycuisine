@@ -1,8 +1,12 @@
+"use client";
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css';
-import { Search } from 'lucide-react';
+import { Search, Menu, X } from 'lucide-react';
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className={styles.header}>
       <div className={`container ${styles.headerContainer}`}>
@@ -13,15 +17,24 @@ export default function Header() {
           </Link>
         </div>
         
-        <div className={styles.searchContainer}>
-          <input type="text" placeholder="Search..." className={styles.searchInput} />
-          <button className={styles.searchButton}>
-            <Search size={18} />
+        <div className={styles.rightSection}>
+          <div className={styles.searchContainer}>
+            <input type="text" placeholder="Search..." className={styles.searchInput} />
+            <button className={styles.searchButton}>
+              <Search size={18} />
+            </button>
+          </div>
+
+          <button 
+            className={styles.menuToggle} 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
       
-      <nav className={styles.nav}>
+      <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
         <div className={`container ${styles.navContainer}`}>
           <Link href="/" className={styles.active}>Home</Link>
           <Link href="/trending">Trending food</Link>
