@@ -152,8 +152,23 @@
 
 @media (max-width: 768px) {
   .bentoGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto;
+    gap: 30px;
   }
+  
+  .gridItem,
+  .item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9, .item10, .item11, .item12, .item13, .item14 {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .large .imageWrapper,
+  .medium .imageWrapper,
+  .small .imageWrapper {
+    height: 300px !important;
+  }
+  
   .sectionTitle {
     font-size: 2.5rem;
   }

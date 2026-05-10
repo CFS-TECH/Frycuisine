@@ -10,6 +10,12 @@ export const metadata = {
   description: "From viral food trends and world-famous dishes to healthy diets and easy recipes — everything about food in one place.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
