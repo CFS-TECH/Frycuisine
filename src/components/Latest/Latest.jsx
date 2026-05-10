@@ -27,18 +27,6 @@ const galleryItems = [
     className: 'item2'
   },
   { 
-    id: 5, 
-    src: '/images/samosa_chaat.png', 
-    alt: 'Spicy Samosa Chaat',
-    category: 'Street Food',
-    date: 'Jan 20',
-    title: 'Spicy Samosa Chaat',
-    desc: 'Tangy, spicy, crunchy Indian favorite snack.',
-    size: 'medium',
-    overlay: false,
-    className: 'item5'
-  },
-  { 
     id: 3, 
     src: '/images/trending_3_1778272749254.png', 
     alt: 'Chocolate Lava Cake',
@@ -61,6 +49,18 @@ const galleryItems = [
     size: 'small',
     overlay: false,
     className: 'item4'
+  },
+  { 
+    id: 5, 
+    src: '/images/samosa_chaat.png', 
+    alt: 'Spicy Samosa Chaat',
+    category: 'Street Food',
+    date: 'Jan 20',
+    title: 'Spicy Samosa Chaat',
+    desc: 'Tangy, spicy, crunchy Indian favorite snack.',
+    size: 'medium',
+    overlay: false,
+    className: 'item5'
   },
   { 
     id: 6, 
@@ -111,18 +111,6 @@ const galleryItems = [
     className: 'item9'
   },
   { 
-    id: 11, 
-    src: '/images/mushroom_pasta.png', 
-    alt: 'Creamy Mushroom Pasta',
-    category: 'Trending Food',
-    date: 'Jan 20',
-    title: 'Creamy Mushroom Pasta',
-    desc: 'Rich mushroom pasta with herbs for a comforting bite.',
-    size: 'medium',
-    overlay: false,
-    className: 'item11'
-  },
-  { 
     id: 10, 
     src: '/images/high_protein_1778276287950.png', 
     alt: 'Sprouts Salad Bowl',
@@ -133,6 +121,18 @@ const galleryItems = [
     size: 'small',
     overlay: false,
     className: 'item10'
+  },
+  { 
+    id: 11, 
+    src: '/images/mushroom_pasta.png', 
+    alt: 'Creamy Mushroom Pasta',
+    category: 'Trending Food',
+    date: 'Jan 20',
+    title: 'Creamy Mushroom Pasta',
+    desc: 'Rich mushroom pasta with herbs for a comforting bite.',
+    size: 'medium',
+    overlay: false,
+    className: 'item11'
   },
   { 
     id: 12, 
@@ -180,7 +180,7 @@ export default function Latest() {
           Latest from <span className={styles.cursiveText}>Frycuisine</span>
         </h2>
         
-        <div className={styles.bentoGrid}>
+        <div className={styles.masonryGrid}>
           {galleryItems.map((item) => (
             <div 
               key={item.id} 
