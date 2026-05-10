@@ -1,78 +1,166 @@
 .section {
-  padding: 80px 0 80px 0;
-  background-color: var(--color-beige);
+  padding: 80px 0;
+  background-color: var(--color-white);
 }
 
 .sectionTitle {
-  text-align: center;
-  font-size: 2.2rem;
-  font-family: var(--font-serif);
-  color: var(--color-slate);
+  font-size: 3rem;
+  color: var(--color-dark);
   margin-bottom: 50px;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 15px;
 }
 
 .cursiveText {
-  font-family: var(--font-cursive);
-  font-size: 4rem;
+  font-family: 'Playfair Display', serif; /* Using serif as a proxy, but I'll add a more cursive one if needed */
   color: var(--color-gold);
+  font-style: italic;
   font-weight: 400;
-  transform: translateY(5px);
+  font-size: 3.5rem;
 }
 
-.gallery {
+.bentoGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-auto-rows: 200px;
-  grid-auto-flow: dense;
-  gap: 15px;
-  padding: 0 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  gap: 30px;
+}
+
+.gridItem {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Size mappings for the Bento effect */
+.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.medium {
+  grid-row: span 2;
 }
 
 .imageWrapper {
   position: relative;
   width: 100%;
   height: 100%;
+  min-height: 250px;
+  border-radius: 15px;
   overflow: hidden;
-  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
-/* Make some items span 2 rows or columns to create a masonry-like feel */
-.imageWrapper:nth-child(1) {
-  grid-column: span 2;
-  grid-row: span 2;
+.large .imageWrapper {
+  height: 100%;
+  min-height: 530px;
 }
-.imageWrapper:nth-child(4) {
-  grid-column: span 2;
-}
-/* Moved the vertical span to item 5 instead of 7 so it doesn't hang at the bottom */
-.imageWrapper:nth-child(5) {
-  grid-row: span 2;
+
+.medium .imageWrapper {
+  height: 400px;
 }
 
 .image {
-  transition: transform 0.6s ease;
+  transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-.imageWrapper:hover .image {
-  transform: scale(1.1);
+.gridItem:hover .image {
+  transform: scale(1.05);
+}
+
+/* Overlay Styles (for Featured items) */
+.withOverlay .imageWrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent 70%);
+}
+
+.overlayContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  z-index: 2;
+  color: var(--color-white);
+}
+
+.itemTitleOverlay {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: var(--color-white);
+}
+
+.itemDescOverlay {
+  font-size: 1rem;
+  opacity: 0.9;
+  max-width: 90%;
+}
+
+/* Standard Item Styles */
+.itemContent {
+  padding: 20px 0;
+}
+
+.itemMeta {
+  font-size: 0.85rem;
+  color: var(--color-slate);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.itemTitle {
+  font-size: 1.25rem;
+  color: var(--color-dark);
+  margin-bottom: 10px;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.gridItem:hover .itemTitle {
+  color: var(--color-gold);
+}
+
+.itemDesc {
+  font-size: 0.9rem;
+  color: var(--color-slate);
+  line-height: 1.5;
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  .bentoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 150px;
+  .bentoGrid {
+    grid-template-columns: 1fr;
   }
-  .imageWrapper:nth-child(1),
-  .imageWrapper:nth-child(4),
-  .imageWrapper:nth-child(7) {
+  
+  .large, .medium {
     grid-column: span 1;
     grid-row: span 1;
   }
+  
+  .large .imageWrapper {
+    min-height: 300px;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
   .cursiveText {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
