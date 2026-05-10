@@ -126,8 +126,16 @@
 }
 
 @media (max-width: 768px) {
+  .headerContainer {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 15px 20px !important;
+  }
+
   .menuToggle {
-    display: block;
+    display: block !important;
   }
 
   .searchContainer {

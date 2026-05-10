@@ -108,23 +108,38 @@
 @media (max-width: 768px) {
   .hero {
     padding-top: 150px;
-    min-height: 60vh;
+    min-height: 80vh;
     text-align: center;
+    display: flex;
+    justify-content: center;
   }
   .content {
     margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .title {
     font-size: 2.2rem;
+    text-align: center;
+    margin: 0 auto 20px auto;
   }
   .subtitle {
-    font-size: 1rem;
-    margin-bottom: 30px;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    text-align: center;
   }
   .buttons {
     flex-direction: column;
     width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    max-width: 320px;
+    gap: 15px;
+  }
+  .primaryBtn, .secondaryBtn {
+    width: 100%;
+    justify-content: space-between;
+    padding: 15px 30px;
+    border-radius: 40px;
   }
 }
